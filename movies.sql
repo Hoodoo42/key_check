@@ -29,7 +29,8 @@ CREATE TABLE `movie` (
   `director` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
   `release_year` varchar(65) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `movie_UN` (`title`,`director`,`release_year`)
+  UNIQUE KEY `movie_UN` (`title`,`director`,`release_year`),
+  CONSTRAINT `movie_CHECK` CHECK (`release_year` >= 1900)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -59,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-10 15:15:48
+-- Dump completed on 2022-09-10 15:29:36
